@@ -78,14 +78,6 @@ INSERT INTO TB_Alocacao VALUES (1, 1, '16/04/2026', '16/05/2026');
 INSERT INTO TB_Alocacao VALUES (2, 2, '16/04/2026', '16/05/2026');
 INSERT INTO TB_Alocacao VALUES (3, 3, '16/04/2026', '16/05/2026');
 
-SELECT
-prof.nm_profisisonal,
-proj.nm_projeto
-FROM TB_Proj proj, TB_Prof prof, TB_Alocacao a
-WHERE a.id_profissional = prof.id_profissional AND a.id_projeto = proj.id_projeto
-ORDER BY proj.id_projeto, prof.id_profissional;
-
-
 SELECT  
 p.nm_projeto,
 c.nm_cliente,
@@ -94,3 +86,40 @@ FROM TB_Proj p, TB_Cliente c, TB_Status_projeto s
 WHERE p.id_cliente = c.id_cliente AND s.id_status = p.id_status
 ORDER BY p.id_projeto, c.id_cliente, s.id_status;
 
+--1) Quais os projetos e status?
+SELECT *
+FROM TB_Proj
+INNER JOIN TB_Status_projeto ON TB_Proj.id_status = TB_Status_projeto.id_status
+
+--2) Quais os nomes e seus cargos?
+SELECT *
+FROM TB_Prof
+INNER JOIN TB_Cargo2 ON TB_Prof.id_cargo = TB_Cargo2.id_cargo
+
+--3) Quais os nmes do projeto e quais os profissionais
+SELECT
+prof.nm_profisisonal,
+proj.nm_projeto
+FROM TB_Proj proj, TB_Prof prof, TB_Alocacao a
+WHERE a.id_profissional = prof.id_profissional AND a.id_projeto = proj.id_projeto
+ORDER BY proj.id_projeto, prof.id_profissional;
+
+/*4) Listar:
+Nome do projeto
+Nome do cliente
+Nome do profissional
+Nome do cargo
+Status do projeto*/
+
+SELECT 
+proj.nm_projeto,
+cliente.nm_cliente,
+prof.nm_profisisonal,
+cargo.nm_cargo,
+s.nm_status
+FROM TB_Proj proj, TB_Prof prof, TB_Cliente cliente, TB_Cargo2 cargo, TB_Status_projeto s, TB_Alocacao a
+WHERE proj.id_projeto = a.id_projeto AND 
+proj.id_cliente = cliente.id_cliente AND
+prof.id_profissional = a.id_profissional AND  
+prof.id_cargo = cargo.id_cargo AND
+proj.id_status = s.id_status;
