@@ -1,0 +1,106 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. EX10.
+       AUTHOR. BRUNO WAI LU.
+       DATE-WRITTEN. 15/05/2026.
+
+       DATA DIVISION.
+       FILE SECTION.
+
+       WORKING-STORAGE SECTION.
+       01 AUXILIARES.
+           03 C-CRESC PIC 9(3) VALUE 1.
+           03 C-DECRESC PIC 9(3) VALUE 1.
+           03 B-CONTINUA PIC 9(1) VALUE ZERO.
+           03 NUM-ENTRADA PIC 9(3).
+           03 NUM-AUXILIAR PIC 9(3).
+           03 B-PRIMO PIC 9(1) VALUE ZERO.
+           03 DIVISOR PIC 9(3).
+           03 LIMITE PIC 9(3).
+           03 RESTO PIC 9(3).
+           03 QUOCIENTE PIC 9(3).
+           03 WT-CONTADOR PIC 9(3).
+
+       01 VET-CRESCENTE.
+           03 PARES PIC 9(3) OCCURS 1 TO 360 DEPENDING ON C-CRESC.
+
+       01 VET-DECRESCENTE.
+           03 IMPARES PIC 9(3) OCCURS 1 TO 360 DEPENDING ON C-DECRESC.
+
+       PROCEDURE DIVISION.
+       INICIO.
+           DISPLAY 'DIGITE O NÚMERO DE ENTRADA: '.
+           ACCEPT NUM-ENTRADA.
+
+           MOVE 1 TO C-CRESC.
+           MOVE NUM-ENTRADA TO NUM-AUXILIAR.
+           PERFORM BUSCA-PRIMOS-CRESC UNTIL C-CRESC > 5.
+           SUBTRACT 1 FROM C-CRESC.
+
+           MOVE 1 TO C-DECRESC.
+           MOVE NUM-ENTRADA TO NUM-AUXILIAR.
+           PERFORM BUSCA-PRIMOS-DECRESC UNTIL C-DECRESC > 5.
+           SUBTRACT 1 FROM C-DECRESC.
+
+           DISPLAY 'NUMERO DE ENTRADA: ' NUM-ENTRADA.
+
+           MOVE 1 TO WT-CONTADOR.
+           DISPLAY 'PRIMOS CRESCENTE:'.
+           PERFORM EXIBE-CRESC UNTIL WT-CONTADOR > C-CRESC.
+
+           MOVE 1 TO WT-CONTADOR.
+           DISPLAY 'PRIMOS DECRESCENTE:'.
+           PERFORM EXIBE-DECRESC UNTIL WT-CONTADOR > C-DECRESC.
+
+           DISPLAY 'DESEJA CONTINUAR? (1 - SIM / 0 - NAO)'.
+           ACCEPT B-CONTINUA.
+
+           IF B-CONTINUA = 1
+               GO TO INICIO
+           END-IF.
+
+           STOP RUN.
+
+       BUSCA-PRIMOS-CRESC.
+           ADD 1 TO NUM-AUXILIAR.
+           PERFORM VERIFICA-PRIMO.
+           IF B-PRIMO = 1
+               MOVE NUM-AUXILIAR TO PARES(C-CRESC)
+               ADD 1 TO C-CRESC
+           END-IF.
+
+       BUSCA-PRIMOS-DECRESC.
+           SUBTRACT 1 FROM NUM-AUXILIAR.
+           PERFORM VERIFICA-PRIMO.
+           IF B-PRIMO = 1
+               MOVE NUM-AUXILIAR TO IMPARES(C-DECRESC)
+               ADD 1 TO C-DECRESC
+           END-IF.
+
+       VERIFICA-PRIMO.
+           IF NUM-AUXILIAR <= 1
+               MOVE 0 TO B-PRIMO
+           ELSE
+               MOVE 1 TO B-PRIMO
+               DIVIDE NUM-AUXILIAR BY 2 GIVING LIMITE
+               MOVE 2 TO DIVISOR
+               PERFORM TESTA-DIVISAO UNTIL DIVISOR > LIMITE
+               OR B-PRIMO = 0
+           END-IF.
+
+       TESTA-DIVISAO.
+           DIVIDE NUM-AUXILIAR BY DIVISOR GIVING QUOCIENTE
+           REMAINDER RESTO.
+           IF RESTO = 0
+               MOVE 0 TO B-PRIMO
+           END-IF.
+           ADD 1 TO DIVISOR.
+
+       EXIBE-CRESC.
+           DISPLAY PARES(WT-CONTADOR).
+           ADD 1 TO WT-CONTADOR.
+
+       EXIBE-DECRESC.
+           DISPLAY IMPARES(WT-CONTADOR).
+           ADD 1 TO WT-CONTADOR.
+
+       END PROGRAM EX10.
