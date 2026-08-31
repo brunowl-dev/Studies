@@ -10,6 +10,8 @@ O objetivo aqui é registrar minha evolução como estudante e servir de portfó
 |---|---|
 | [`fatec/`](./fatec) | Atividades feitas na faculdade, organizadas por semestre (C, Java, COBOL, SQL) |
 | [`python/`](./python) | Exercícios de Python feitos em cursos livres e por conta própria |
+| [`frontend/`](./frontend) | Exercícios de HTML, CSS e JS feitos por conta própria |
+
 
 Cada pasta tem seu próprio README explicando o que tem dentro.
 
