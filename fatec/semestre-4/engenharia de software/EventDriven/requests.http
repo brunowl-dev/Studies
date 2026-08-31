@@ -1,0 +1,9 @@
+### Criar pedido
+POST http://localhost:8080/pedidos
+Content-Type: application/json
+
+{
+  "idCliente": "C001",
+  "idProduto": "P001",
+  "quantidade": 6
+}

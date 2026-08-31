@@ -1,0 +1,18 @@
+{
+  "java.server.launchMode": "Standard",
+  "java.project.importOnFirstTimeStartup": "automatic",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.import.maven.enabled": true,
+  "java.import.gradle.enabled": false,
+  "java.test.enable": true,
+  "java.test.defaultConfig": "default",
+  "java.test.config": [
+    {
+      "name": "default",
+      "workingDirectory": "${workspaceFolder}",
+      "testKind": "junit"
+    }
+  ],
+  "maven.executable.preferMavenWrapper": true,
+  "editor.formatOnSave": true
+}

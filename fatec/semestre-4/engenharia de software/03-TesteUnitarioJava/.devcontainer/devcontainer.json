@@ -1,0 +1,39 @@
+{
+  "name": "TDD com Java e JUnit",
+  "image": "mcr.microsoft.com/devcontainers/java:21",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-java-test",
+        "vscjava.vscode-maven",
+        "redhat.java",
+        "vscjava.vscode-java-debug",
+        "vscjava.vscode-java-dependency",
+        "visualstudioexptteam.vscodeintellicode",
+        "ryanluker.vscode-coverage-gutters"
+      ],
+      "settings": {
+        "java.server.launchMode": "Standard",
+        "java.project.importOnFirstTimeStartup": "automatic",
+        "java.test.enable": true,
+        "java.test.defaultConfig": "default",
+        "java.test.config": [
+          {
+            "name": "default",
+            "workingDirectory": "${workspaceFolder}",
+            "testKind": "junit"
+          }
+        ],
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.import.maven.enabled": true,
+        "java.import.gradle.enabled": false,
+        "maven.executable.preferMavenWrapper": true,
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "postCreateCommand": "chmod +x mvnw && ./mvnw compile",
+  "forwardPorts": [],
+  "remoteUser": "vscode"
+}

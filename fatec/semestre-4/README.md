@@ -5,3 +5,4 @@ Aprofundamento em Java (herança, polimorfismo, classes abstratas, interfaces, e
 - [`java/`](./java) — exercícios e projetos de POO avançada (um projeto Eclipse por pasta)
 - [`sql/`](./sql) — scripts de consultas e exercícios práticos de banco de dados
 - [`cobol/`](./cobol) — primeiros programas em COBOL
+- [`engenharia de software/`](./engenharia de software) — atividades realizadas na disciplina de engenharia de software III

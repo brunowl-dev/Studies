@@ -1,0 +1,27 @@
+{
+  "name": "event-driven-java-rabbitmq-workshop",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [8080, 15672],
+  "postCreateCommand": "mvn -B clean package -DskipTests",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-boot-dev-pack",
+        "humao.rest-client",
+        "redhat.vscode-yaml"
+      ],
+      "settings": {
+        "java.configuration.runtimes": [
+          {
+            "name": "JavaSE-21",
+            "path": "/opt/java/openjdk",
+            "default": true
+          }
+        ]
+      }
+    }
+  }
+}
