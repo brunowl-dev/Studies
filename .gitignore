@@ -1,0 +1,21 @@
+# Build outputs (C / Code::Blocks)
+bin/
+obj/
+*.exe
+*.o
+*.layout
+*.depend
+
+# Java
+*.class
+
+# Eclipse
+.metadata/
+.settings/
+.classpath
+.project
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp

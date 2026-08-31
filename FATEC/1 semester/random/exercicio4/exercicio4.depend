@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1724278468 source:c:\users\bwl\documents\codeblocks codes\exercicio4\main.c
-	<stdio.h>
-	<locale.h>
-	<stdlib.h>
-

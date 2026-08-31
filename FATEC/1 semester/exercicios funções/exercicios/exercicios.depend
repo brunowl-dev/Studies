@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1729607038 source:f:\codeblocks codes\exercicios funções\exercicios\main.c
-	<stdio.h>
-	<stdlib.h>
-	<locale.h>
-	<math.h>
-

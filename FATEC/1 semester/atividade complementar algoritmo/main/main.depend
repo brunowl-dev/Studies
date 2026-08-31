@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1726709177 source:f:\codeblocks codes\atividade complementar algoritmo\main\main.c
-	<stdio.h>
-	<stdlib.h>
-	<locale.h>
-	<math.h>
-	<stdio.h>
-
