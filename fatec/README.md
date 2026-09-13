@@ -10,5 +10,6 @@ Atividades feitas durante o curso de **Análise e Desenvolvimento de Sistemas** 
 | [`semestre-2/`](./semestre-2) | Estruturas de programação, funções e desafios | C |
 | [`semestre-3/`](./semestre-3) | Programação orientada a objetos (introdução) | Java |
 | [`semestre-4/`](./semestre-4) | POO avançada, banco de dados e programação legada | Java, SQL, COBOL |
+| [`semestre-5/`](./semestre-5) | Mais POO e Java, em breve com Springboot | Java|
 
 > Alguns projetos foram feitos no Code::Blocks (C) e Eclipse (Java). Arquivos de build e configuração de IDE (`bin/`, `obj/`, `.class`, `.metadata`, etc.) foram removidos do controle de versão — veja o [`.gitignore`](../.gitignore) na raiz.
