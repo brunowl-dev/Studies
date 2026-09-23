@@ -72,7 +72,7 @@ public class Formulario
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				valor1 = Float.parseFloat(ftxtValor1.getText());
-				valor2 = Float.parseFloat(ftxtValor1.getText());
+				valor2 = Float.parseFloat(ftxtValor2.getText());
 				calculo = new Adicao(valor1, valor2);
 				calculo.calcular();
 				atualizaResultado();
@@ -86,7 +86,7 @@ public class Formulario
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				valor1 = Float.parseFloat(ftxtValor1.getText());
-				valor2 = Float.parseFloat(ftxtValor1.getText());
+				valor2 = Float.parseFloat(ftxtValor2.getText());
 				calculo = new Subtracao(valor1, valor2);
 				calculo.calcular();
 				atualizaResultado();
@@ -100,7 +100,7 @@ public class Formulario
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				valor1 = Float.parseFloat(ftxtValor1.getText());
-				valor2 = Float.parseFloat(ftxtValor1.getText());
+				valor2 = Float.parseFloat(ftxtValor2.getText());
 				calculo = new Multiplicacao(valor1, valor2);
 				calculo.calcular();
 				atualizaResultado();
@@ -114,7 +114,7 @@ public class Formulario
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				valor1 = Float.parseFloat(ftxtValor1.getText());
-				valor2 = Float.parseFloat(ftxtValor1.getText());
+				valor2 = Float.parseFloat(ftxtValor2.getText());
 				calculo = new Divisao(valor1, valor2);
 				calculo.calcular();
 				atualizaResultado();
